@@ -1,0 +1,49 @@
+<mat-sidenav-container class="side-panel-container">
+  <mat-sidenav
+    #navigationPanel
+    class="side-panel"
+    position="start"
+    [opened]="true"
+    [mode]="'side'"
+  >
+    <ng-content select="[side-panel-start]"></ng-content>
+  </mat-sidenav>
+
+  <button
+    mat-icon-button
+    class="side-panel__toggle side-panel__toggle--start"
+    (click)="navigationPanel.toggle()"
+    aria-label="Open main navigation side panel"
+  >
+    @if (navigationPanel.opened) {
+      <mat-icon>left_panel_close</mat-icon>
+    } @else {
+      <mat-icon>left_panel_open</mat-icon>
+    }
+  </button>
+
+  <ng-content></ng-content>
+
+  <button
+    mat-icon-button
+    class="side-panel__toggle side-panel__toggle--end"
+    (click)="detailsPanel.toggle()"
+    aria-label="Open main navigation side panel"
+  >
+    @if (detailsPanel.opened) {
+      <mat-icon>right_panel_close</mat-icon>
+    } @else {
+      <mat-icon>right_panel_open</mat-icon>
+    }
+  </button>
+
+  <mat-sidenav
+    #detailsPanel
+    class="side-panel"
+    position="end"
+    [opened]="true"
+    [mode]="'side'"
+  >
+    <ng-content select="[side-panel-end]"></ng-content>
+  </mat-sidenav>
+</mat-sidenav-container>

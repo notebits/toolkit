@@ -1,0 +1,23 @@
+.side-panel-container {
+  height: 100%;
+  background-color: white;
+}
+
+.side-panel {
+  width: 25%;
+}
+
+.side-panel__toggle {
+  position: absolute;
+  top: 0;
+  z-index: 1; // TODO: Configure with a variable?
+  margin: 0.25rem;
+}
+
+.side-panel__toggle--start {
+  left: 0;
+}
+
+.side-panel__toggle--end {
+  right: 0;
+}
